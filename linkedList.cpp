@@ -15,7 +15,7 @@ void readFile(Node** node)
         getline(inFile, discard);
         while(inFile)
         {
-    // input stream (repeat as necessary with a while loop [not implemented])
+    // input stream (repeat as necessary with a while loop)
         getline(inFile, teamName, ',');	// team name
         temp.teamName = teamName;
         getline(inFile, stadiumName, ',');	// stadium name
