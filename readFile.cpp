@@ -1,7 +1,7 @@
 #include "readFile.h"
+#include<QDebug>
 
 using namespace std;
-
 
 void readFile()
 {
@@ -27,13 +27,14 @@ void readFile()
 
     // discards header information
         getline(inFile, discard);
-
-    // input stream (repeat as necessary with a for loop [not implemented])
+        while(inFile.good())
+        {
+    // input stream (repeat as necessary with a while loop [not implemented])
         getline(inFile, teamName, ',');	// team name
         getline(inFile, stadiumName, ',');	// stadium name
 
         inFile.ignore();
-        getline(inFile, seatingCapacity, '"');	// seating cap
+        getline(inFile, seatingCapacity, ',');	// seating cap
         inFile.ignore();
 
         inFile.ignore();
@@ -45,28 +46,24 @@ void readFile()
         getline(inFile, surfaceType, ',');	// surface type
         getline(inFile, stadiumRoofType, ',');	// stadium roof
         getline(inFile, dateOpened);	// date
-
-        getline(inFile, next);
-
+        cout << teamName;
+        cout << " ";
+        cout << stadiumName;
+        cout << " ";
+        cout << seatingCapacity;
+        cout << " ";
+        cout << location;
+        cout << " ";
+        cout << conference;
+        cout << " ";
+        cout << division;
+        cout << " ";
+        cout << surfaceType;
+        cout << " ";
+        cout << stadiumRoofType;
+        cout << " ";
+        cout << dateOpened;
+        cout << endl;
+        }
     inFile.close();
-
-    cout << teamName;
-    cout << endl;
-    cout << stadiumName;
-    cout << endl;
-    cout << seatingCapacity;
-    cout << endl;
-    cout << location;
-    cout << endl;
-    cout << conference;
-    cout << endl;
-    cout << division;
-    cout << endl;
-    cout << surfaceType;
-    cout << endl;
-    cout << stadiumRoofType;
-    cout << endl;
-    cout << dateOpened;
-    cout << endl;
-    cout << next;
 }
