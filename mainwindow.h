@@ -21,9 +21,13 @@ public:
 public slots:
     void buttonClickHandler();
 
+private slots:
+    void on_actionContactUs_triggered();
+
 private:
     Ui::MainWindow *ui;
 };
+
 
 
 #endif // MAINWINDOW_H

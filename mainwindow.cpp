@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QPushButton>
 #include <QVBoxLayout>
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,4 +21,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::buttonClickHandler()
 {
+}
+
+void MainWindow::on_actionContactUs_triggered()
+{
+    Dialog dialog;
+    dialog.setModal(true);
+    dialog.exec();
 }

@@ -305,7 +305,7 @@
      <string>Help</string>
     </property>
     <addaction name="actionHelp"/>
-    <addaction name="actionContact"/>
+    <addaction name="actionContactUs"/>
    </widget>
    <addaction name="menuA"/>
   </widget>
@@ -318,6 +318,11 @@
   <action name="actionHelp">
    <property name="text">
     <string>Help</string>
+   </property>
+  </action>
+  <action name="actionContactUs">
+   <property name="text">
+    <string>Contact Us</string>
    </property>
   </action>
  </widget>
