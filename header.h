@@ -2,27 +2,17 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
-
+#include "Team.h"
 
 using namespace std;
 
 const int AR_SIZE = 32;
 
-struct Team 
-{
-    string teamName;
-    string stadiumName;
-    string seatingCapacity;
-    string location;
-    string conference;
-    string division;
-    string surfaceType;
-    string stadiumRoofType;
-    int dateOpened;
-};
 
 
 void inputFn(Team arr[], int size);
+
+//void expandTeams(...) TODO
 
 void stadiumSort(Team arr[], int size);
 
