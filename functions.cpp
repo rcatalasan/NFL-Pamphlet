@@ -1,4 +1,4 @@
-#include "Header.h"
+#include "header.h"
 
 
 void inputFn(Team arr[], int size)
@@ -8,6 +8,7 @@ void inputFn(Team arr[], int size)
 
 	// opening input file
 	inFile.open("NFL.txt");
+	std::string temp;
 
 	int index = 0;			// PROC - loop control variable and array traversal
 
@@ -15,18 +16,18 @@ void inputFn(Team arr[], int size)
 	while (inFile && index < size)
 	{
 		// populating the array with user input
-		getline(inFile, arr[index].teamName);
-		getline(inFile, arr[index].stadiumName);
-		getline(inFile, arr[index].seatingCapacity);
-		getline(inFile, arr[index].location);
-		getline(inFile, arr[index].conference);
-		getline(inFile, arr[index].division);
-		getline(inFile, arr[index].surfaceType);
-		getline(inFile, arr[index].stadiumRoofType);
+		getline(inFile, temp);
+		if(temp == "Expansion") break; // if the read line says EXPANSION, then stop reading from the file
+		else arr[index].changeTeamName(temp);
+		getline(inFile, temp); arr[index].changeStadiumName(temp);
+		getline(inFile, temp); arr[index].changeSeatingCapacity(temp);
+		getline(inFile, temp); arr[index].changeLocation(temp);
+		getline(inFile, temp); arr[index].changeConference(temp);
+		getline(inFile, temp); arr[index].changeDivision(temp);
+		getline(inFile, temp); arr[index].changeSurfaceType(temp);
+		getline(inFile, temp); arr[index].changeStadiumRoofType(temp);
 		//getline(inFile, arr[index].dateOpened);
-		inFile >> arr[index].dateOpened;
-		inFile.ignore(numeric_limits<streamsize>::max(), '\n');
-		
+		getline(inFile, temp); arr[index].changeDateOpened(stoi(temp));
 		index++;
 	}
 	// closes input file
@@ -46,7 +47,7 @@ void stadiumSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].stadiumName > tempArr[i].stadiumName)
+		while (j >= 0 && arr[j].getStadiumName() > tempArr[i].getStadiumName())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -70,7 +71,7 @@ void seatingSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].seatingCapacity < tempArr[i].seatingCapacity)
+		while (j >= 0 && arr[j].getSeatingCapacity() < tempArr[i].getSeatingCapacity())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -94,7 +95,7 @@ void locationSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].location > tempArr[i].location)
+		while (j >= 0 && arr[j].getLocation() > tempArr[i].getLocation())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -118,7 +119,7 @@ void conferenceSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].conference > tempArr[i].conference)
+		while (j >= 0 && arr[j].getConference() > tempArr[i].getConference())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -141,7 +142,7 @@ void divisionSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].division > tempArr[i].division)
+		while (j >= 0 && arr[j].getDivision() > tempArr[i].getDivision())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -165,7 +166,7 @@ void surfaceTypeSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].surfaceType > tempArr[i].surfaceType)
+		while (j >= 0 && arr[j].getSurfaceType() > tempArr[i].getSurfaceType())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -189,7 +190,7 @@ void roofTypeSort(Team arr[], int size)
 
 		j = i - 1;
 
-		while (j >= 0 && arr[j].stadiumRoofType > tempArr[i].stadiumRoofType)
+		while (j >= 0 && arr[j].getStadiumRoofType() > tempArr[i].getStadiumRoofType())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -206,14 +207,12 @@ void dateOpenedSort(Team arr[], int size)
 {
 	Team tempArr[AR_SIZE];
 	int j;
-
 	for (int i = 1; i < size; ++i)
 	{
 		tempArr[i] = arr[i];
 
 		j = i - 1;
-
-		while (j >= 0 && arr[j].dateOpened > tempArr[i].dateOpened)
+		while (j >= 0 && arr[j].getDateOpened() > tempArr[i].getDateOpened())
 		{
 			arr[j + 1] = arr[j];
 			j = j - 1;
@@ -223,8 +222,3 @@ void dateOpenedSort(Team arr[], int size)
 
 	}
 }
-
-
-
-
-
