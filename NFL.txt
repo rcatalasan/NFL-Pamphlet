@@ -153,7 +153,7 @@ Fixed
 2020
 Los Angeles Chargers
 SoFi Stadium
-65,000
+70,240
 Inglewood, California
 American Football Conference
 AFC West
@@ -286,3 +286,13 @@ NFC East
 Bermuda Grass
 Open
 1997
+Expansion
+San Diego Sailors
+Qualcomm Stadium
+71500
+San Diego, California
+American Football Conference
+AFC West
+Bermuda Grass
+Open
+2022
