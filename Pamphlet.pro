@@ -10,14 +10,16 @@ CONFIG += c++11
 
 SOURCES += \
     dialog.cpp \
-    linkedList.cpp \
+    functions.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    team.cpp
 
 HEADERS += \
     dialog.h \
-    linkedList.h \
-    mainwindow.h
+    header.h \
+    mainwindow.h \
+    team.h
 
 FORMS += \
     dialog.ui \
@@ -29,4 +31,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    NFL_Information.csv
+    NFL.txt
