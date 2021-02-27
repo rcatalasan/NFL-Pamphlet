@@ -18,15 +18,14 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-public slots:
-    void buttonClickHandler();
-
 private slots:
     void on_actionContactUs_triggered();
 
 private:
     Ui::MainWindow *ui;
+    void TableWidgetDisplay();
 };
+
 
 
 
