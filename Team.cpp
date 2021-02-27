@@ -1,82 +1,75 @@
-/*
- * Team.cpp
- *
- *  Created on: Feb 26, 2021
- *      Author: 00joh
- */
-
-#include "Team.h"
+#include "team.h"
 
 Team::Team() {
-	// TODO Auto-generated constructor stub
+    // TODO Auto-generated constructor stub
 
 }
 
 Team::~Team() {
-	// TODO Auto-generated destructor stub
+    // TODO Auto-generated destructor stub
 }
 
 std::string Team::getTeamName()
 {
-	return teamName;
+    return teamName;
 }
 std::string Team::getStadiumName()
 {
-	return stadiumName;
+    return stadiumName;
 }
 std::string Team::getSeatingCapacity()
 {
-	return seatingCapacity;
+    return seatingCapacity;
 }
 std::string Team::getLocation()
 {
-	return location;
+    return location;
 }
 std::string Team::getConference()
 {
-	return conference;
+    return conference;
 }
 std::string Team::getDivision()
 {
-	return division;
+    return division;
 }
 std::string Team::getSurfaceType()
 {
-	return surfaceType;
+    return surfaceType;
 }
 std::string Team::getStadiumRoofType()
 {
-	return stadiumRoofType;
+    return stadiumRoofType;
 }
-int Team::getDateOpened()
+std::string Team::getDateOpened()
 {
-	return dateOpened;
+    return dateOpened;
 }
 
 void Team::changeTeamName(std::string tn){
-	teamName = tn;
+    teamName = tn;
 }
 void Team::changeStadiumName(std::string sn){
-	stadiumName = sn;
+    stadiumName = sn;
 }
 void Team::changeSeatingCapacity(std::string sc){
-	seatingCapacity = sc;
+    seatingCapacity = sc;
 }
 void Team::changeLocation(std::string L){
-	location = L;
+    location = L;
 }
 void Team::changeConference(std::string c){
-	conference = c;
+    conference = c;
 }
 void Team::changeDivision(std::string d){
-	division = d;
+    division = d;
 }
 void Team::changeSurfaceType(std::string st){
-	surfaceType = st;
+    surfaceType = st;
 }
 void Team::changeStadiumRoofType(std::string srt){
-	stadiumRoofType = srt;
+    stadiumRoofType = srt;
 }
-void Team::changeDateOpened(int d){
-	dateOpened = d;
+void Team::changeDateOpened(std::string d){
+    dateOpened = d;
 }
