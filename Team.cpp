@@ -1,4 +1,4 @@
-#include "team.h"
+#include "Team.h"
 
 Team::Team() {
     // TODO Auto-generated constructor stub
