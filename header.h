@@ -15,20 +15,5 @@ void inputFn(Team arr[], int size);
 
 //void expandTeams(...) TODO
 
-void stadiumSort(Team arr[], int size);
-
-void locationSort(Team arr[], int size);
-
-void seatingSort(Team arr[], int size);
-
-void conferenceSort(Team arr[], int size);
-
-void divisionSort(Team arr[], int size);
-
-void surfaceTypeSort(Team arr[], int size);
-
-void roofTypeSort(Team arr[], int size);
-
-void dateOpenedSort(Team arr[], int size);
 
 #endif // HEADER_H
