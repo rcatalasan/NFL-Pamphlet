@@ -15,6 +15,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     TableWidgetDisplay();
+    on_actionLight_Mode_triggered();
 }
 
 MainWindow::~MainWindow()
@@ -70,5 +71,38 @@ void MainWindow::TableWidgetDisplay()
     }
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableWidget->setSortingEnabled(true);
+}
+
+
+
+void MainWindow::on_actionLight_Mode_triggered()
+{
+    ui->NFLPamphletDark->setVisible(false);
+    ui->NFLPicture->setVisible(true);
+    ui->actionDark_Mode->setChecked(false);
+    setPalette(this->style()->standardPalette());
+    setStyleSheet("");
+    ui->tableWidget->setPalette(this->style()->standardPalette());
+    ui->tableWidget->setStyleSheet("");
+}
+
+void MainWindow::on_actionDark_Mode_triggered()
+{
+    ui->actionLight_Mode->setChecked(false);
+    ui->NFLPamphletDark->setVisible(true);
+    ui->NFLPicture->setVisible(false);
+    setStyleSheet(
+"color: #dedede;"
+"background-color: #2f3136;"
+"selection-color:dedede;"
+"selection-background-color: #40444b;");
+    ui->tableWidget->setStyleSheet("QTableView::item:selected { color:white; background:#000000;}"
+                                   "QTableCornerButton::section { background-color:#232326; }"
+                                   "QHeaderView::section {color:white;}"
+                                   "QHeaderView::section {background-color:#232326;}"
+                                   "QHeaderView::section { border-top: 0px solid black}"
+                                   "QHeaderView::section { border-right: 0px solid black}"
+                                   "QHeaderView::section { border-bottom: 0px solid black}"
+                                   "QHeaderView::section { border-left: 0px solid black}");
 }
 

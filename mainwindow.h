@@ -21,6 +21,10 @@ public:
 private slots:
     void on_actionContactUs_triggered();
 
+    void on_actionLight_Mode_triggered();
+
+    void on_actionDark_Mode_triggered();
+
 private:
     Ui::MainWindow *ui;
     void TableWidgetDisplay();
