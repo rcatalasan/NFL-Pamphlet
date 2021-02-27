@@ -32,3 +32,190 @@ void inputFn(Team arr[], int size)
     // closes input file
     inFile.close();
 }
+// --- SORTING FUNCTIONS ---
+void stadiumSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getStadiumName() > tempArr[i].getStadiumName())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+
+void seatingSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getSeatingCapacity() < tempArr[i].getSeatingCapacity())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+
+void locationSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getLocation() > tempArr[i].getLocation())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+
+void conferenceSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getConference() > tempArr[i].getConference())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+void divisionSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getDivision() > tempArr[i].getDivision())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+
+void surfaceTypeSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getSurfaceType() > tempArr[i].getSurfaceType())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+
+void roofTypeSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j].getStadiumRoofType() > tempArr[i].getStadiumRoofType())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
+
+
+
+void dateOpenedSort(Team arr[], int size)
+{
+	Team tempArr[AR_SIZE];
+	int j;
+	for (int i = 1; i < size; ++i)
+	{
+		tempArr[i] = arr[i];
+
+		j = i - 1;
+		while (j >= 0 && arr[j].getDateOpened() > tempArr[i].getDateOpened())
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+
+		arr[j + 1] = tempArr[i];
+
+	}
+}
