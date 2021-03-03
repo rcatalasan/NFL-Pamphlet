@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1241</width>
-    <height>654</height>
+    <height>670</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +19,13 @@
   <property name="minimumSize">
    <size>
     <width>1241</width>
-    <height>654</height>
+    <height>670</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1241</width>
-    <height>654</height>
+    <height>670</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -55,7 +55,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>90</y>
+      <y>80</y>
       <width>1221</width>
       <height>501</height>
      </rect>
@@ -102,9 +102,66 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/new/prefix1/imgs/nflpamphletdark.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton_afc">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>589</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>AFC Teams</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_nfl">
+    <property name="geometry">
+     <rect>
+      <x>920</x>
+      <y>590</y>
+      <width>151</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>NFL Teams</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_all">
+    <property name="geometry">
+     <rect>
+      <x>750</x>
+      <y>590</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Display all teams</string>
+    </property>
+   </widget>
    <zorder>NFLPamphletDark</zorder>
    <zorder>tableWidget</zorder>
    <zorder>NFLPicture</zorder>
+   <zorder>pushButton_afc</zorder>
+   <zorder>pushButton_nfl</zorder>
+   <zorder>pushButton_all</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
