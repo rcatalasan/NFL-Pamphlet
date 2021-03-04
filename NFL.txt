@@ -1,6 +1,6 @@
 Arizona Cardinals
 State Farm Stadium
-63,400
+63400
 Glendale, Arizona
 National Football Conference
 NFC West
@@ -9,16 +9,16 @@ Retractable
 2026
 Atlanta Falcons
 Mercedes-Benz Stadium
-71,000
+71000
 Atlanta, Georgia
 National Football Conference
 NFC South
-FieldTurf Classic HD
+FieldTurf Classic HD
 Fixed
 2017
 Baltimore Ravens
 M&T Bank Stadium
-71,008
+71008
 Baltimore, Maryland
 American Football Conference
 AFC North
@@ -27,7 +27,7 @@ Open
 1998
 Buffalo Bills
 Bills Stadiuim
-50,000
+50000
 Orchard Park, New York
 American Football Conference
 AFC East
@@ -36,7 +36,7 @@ Open
 1973
 Carolina Panthers
 Bank of America Stadium
-75,419
+75419
 Charlotte, North Carolina
 National Football Conference
 NFC South
@@ -45,7 +45,7 @@ Open
 1996
 Chicago Bears
 Soldier Field
-61,500
+61500
 Chicago, Illinois
 National Football Conference
 NFC North
@@ -54,7 +54,7 @@ Open
 1924
 Cincinnati Bengals
 Paul Brown Stadium
-65,515
+65515
 Cincinnati, Ohio
 American Football Conference
 AFC North
@@ -63,7 +63,7 @@ Open
 2000
 Cleveland Browns
 FirstEnergy Stadium
-67,895
+67895
 Cleveland, Ohio
 American Football Conference
 AFC North
@@ -72,7 +72,7 @@ Open
 1999
 Dallas Cowboys
 AT&T Stadium
-80,000
+80000
 Arlington, Texas
 National Football Conference
 NFC East
@@ -81,7 +81,7 @@ Retractable
 2009
 Denver Broncos
 Empower Field at Mile High
-76,125
+76125
 Denver, Colorado
 American Football Conference
 AFC West
@@ -90,16 +90,16 @@ Open
 2001
 Detroit Lions
 Ford Field
-65,000
+65000
 Detroit, Michigan
 National Football Conference
 NFC North
-FieldTurf Classic HD
+FieldTurf Classic HD
 Fixed
 2002
 Green Bay Packers
 Lambeau Field
-81,435
+81435
 Green Bay, Wisconsin
 National Football Conference
 NFC North
@@ -108,7 +108,7 @@ Open
 1957
 Houston Texans
 NRG Stadium
-72,220
+72220
 Houston, Texas
 American Football Conference
 AFC South
@@ -117,16 +117,16 @@ Retractable
 2002
 Indianapolis Colts
 Lucas Oil Stadium
-67,000
+67000
 Indianapolis, Indiana
 American Football Conference
 AFC South
-FieldTurf Classic HD
+FieldTurf Classic HD
 Retractable
 2008
 Jacksonville Jaguars
 TIAA Bank Field
-69,132
+69132
 Jacksonville, Florida
 American Football Conference
 AFC South
@@ -135,7 +135,7 @@ Open
 1995
 Kansas City Chiefs
 Arrowhead Stadium
-76,416
+76416
 Kansas City, Missouri
 American Football Conference
 AFC West
@@ -143,8 +143,8 @@ Bermuda Grass
 Open
 1972
 Las Vegas Raiders
-Allegiant Stadium
-65,000
+Allegiant Stadium 
+65000
 Paradise, Nevada
 American Football Conference
 AFC West
@@ -153,7 +153,7 @@ Fixed
 2020
 Los Angeles Chargers
 SoFi Stadium
-70,240
+70240
 Inglewood, California
 American Football Conference
 AFC West
@@ -162,16 +162,16 @@ Fixed
 2020
 Los Angeles Rams
 SoFi Stadium
-70,240
+70240
 Inglewood, California
 National Football Conference
 NFC West
 Bermuda Grass
-Fixed
+Fixed 
 2020
 Miami Dolphins
 Hard Rock Stadium
-65,326
+65326
 Miami Gardens, Florida
 American Football Conference
 AFC East
@@ -180,7 +180,7 @@ Open
 1987
 Minnesota Vikings
 U.S. Bank Stadium
-66,655
+66655
 Minneapolis, Minnesota
 National Football Conference
 NFC North
@@ -189,16 +189,16 @@ Fixed
 2016
 New England Patriots
 Gillette Stadium
-66,829
+66829
 Foxborough, Massachusetts
 American Football Conference
 AFC East
-FieldTurf Revolution
+FieldTurf Revolution
 Open
 2002
 New Orleans Saints
 Mercedes-Benz Superdome
-73,000
+73000
 New Orleans, Louisiana
 National Football Conference
 NFC South
@@ -207,7 +207,7 @@ Fixed
 1975
 New York Giants
 MetLife Stadium
-82,500
+82500
 East Rutherford, New Jersey
 National Football Conference
 NFC East
@@ -216,7 +216,7 @@ Open
 2010
 New York Jets
 MetLife Stadium
-82,500
+82500
 East Rutherford, New Jersey
 American Football Conference
 AFC East
@@ -225,7 +225,7 @@ Open
 2010
 Philadelphia Eagles
 Lincoln Financial Field
-69,596
+69596
 Philadelphia, Pennsylvania
 National Football Conference
 NFC East
@@ -234,7 +234,7 @@ Open
 2003
 Pittsburgh Steelers
 Heinz Field
-68,400
+68400
 Pittsburgh, Pennsylvania
 American Football Conference
 AFC North
@@ -243,7 +243,7 @@ Open
 2001
 San Francisco 49ers
 Levi's Stadium
-68,500
+68500
 Santa Clara, California
 National Football Conference
 NFC West
@@ -252,16 +252,16 @@ Open
 2014
 Seattle Seahawks
 CenturyLink Field
-68,000
+68000
 Seattle, Washington
 National Football Conference
 NFC West
-FieldTurf Revolution
+FieldTurf Revolution
 Open
 2002
 Tampa Bay Buccaneers
 Raymond James Stadium
-65,890
+65890
 Tampa, Florida
 National Football Conference
 NFC South
@@ -270,7 +270,7 @@ Open
 1998
 Tennessee Titans
 Nissan Stadium
-69,143
+69143
 Nashville, Tennessee
 American Football Conference
 AFC South
@@ -279,20 +279,10 @@ Open
 1999
 Washington Football Team
 FedExField
-82,000
+82000
 Landover, Maryland
 National Football Conference
 NFC East
 Bermuda Grass
 Open
 1997
-Expansion
-San Diego Sailors
-Qualcomm Stadium
-71500
-San Diego, California
-American Football Conference
-AFC West
-Bermuda Grass
-Open
-2022
