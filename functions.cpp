@@ -1,221 +1,44 @@
 #include "header.h"
+#include <algorithm>
 
-
-void inputFn(Team arr[], int size)
+// Function to put thousands
+// separators in the given integer
+string thousandSeparator(int n)
 {
-    // declaring ifstram variable to handle input file
-    ifstream inFile;
+    string ans = "";
 
-    // opening input file
-    inFile.open("C:\\Users\\00joh\\Documents\\Pamphlet\\NFL.txt");
-    std::string temp;
+    // Convert the given integer
+    // to equivalent string
+    string num = to_string(n);
 
-    int index = 0;	// PROC - loop control variable and array traversal
+    // Initialise count
+    int count = 0;
 
-    // loop that traverses the array
-    while (inFile && index < size)
-    {
-        // populating the array with user input
-        getline(inFile, temp);
-        if(temp == "Expansion") break; // if the read line says EXPANSION, then stop reading from the file
-        else arr[index].changeTeamName(temp);
-        getline(inFile, temp); arr[index].changeStadiumName(temp);
-        getline(inFile, temp); arr[index].changeSeatingCapacity(temp);
-        getline(inFile, temp); arr[index].changeLocation(temp);
-        getline(inFile, temp); arr[index].changeConference(temp);
-        getline(inFile, temp); arr[index].changeDivision(temp);
-        getline(inFile, temp); arr[index].changeSurfaceType(temp);
-        getline(inFile, temp); arr[index].changeStadiumRoofType(temp);
-        getline(inFile, temp); arr[index].changeDateOpened(temp);
-        index++;
+    // Traverse the string in reverse
+    for (int i = num.size() - 1;
+        i >= 0; i--) {
+        count++;
+        ans.push_back(num[i]);
+
+        // If three characters
+        // are traversed
+        if (count == 3) {
+            ans.push_back(',');
+            count = 0;
+        }
     }
-    // closes input file
-    inFile.close();
-}
-// --- SORTING FUNCTIONS ---
-void stadiumSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
 
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
+    // Reverse the string to get
+    // the desired output
+    std::reverse(ans.begin(), ans.end());
 
-		j = i - 1;
+    // If the given string is
+    // less than 1000
+    if (ans.size() % 4 == 0) {
 
-		while (j >= 0 && arr[j].getStadiumName() > tempArr[i].getStadiumName())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
+        // Remove ','
+        ans.erase(ans.begin());
+    }
 
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-
-void seatingSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-
-		while (j >= 0 && arr[j].getSeatingCapacity() < tempArr[i].getSeatingCapacity())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-
-void locationSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-
-		while (j >= 0 && arr[j].getLocation() > tempArr[i].getLocation())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-
-void conferenceSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-
-		while (j >= 0 && arr[j].getConference() > tempArr[i].getConference())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-void divisionSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-
-		while (j >= 0 && arr[j].getDivision() > tempArr[i].getDivision())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-
-void surfaceTypeSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-
-		while (j >= 0 && arr[j].getSurfaceType() > tempArr[i].getSurfaceType())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-
-void roofTypeSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-
-		while (j >= 0 && arr[j].getStadiumRoofType() > tempArr[i].getStadiumRoofType())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
-}
-
-
-
-void dateOpenedSort(Team arr[], int size)
-{
-	Team tempArr[AR_SIZE];
-	int j;
-	for (int i = 1; i < size; ++i)
-	{
-		tempArr[i] = arr[i];
-
-		j = i - 1;
-		while (j >= 0 && arr[j].getDateOpened() > tempArr[i].getDateOpened())
-		{
-			arr[j + 1] = arr[j];
-			j = j - 1;
-		}
-
-		arr[j + 1] = tempArr[i];
-
-	}
+    return ans;
 }
