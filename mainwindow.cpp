@@ -38,8 +38,8 @@ void MainWindow::TableWidgetDisplay()
     QStringList hLabels; // set the column labels
     hLabels << "Team Name" << "Stadium Name" << "Seating Capacity" << "Location" << "Conference" << "Division" << "Surface Type" << "Roof Type" << "Date Opened";
     ui->tableWidget->setHorizontalHeaderLabels(hLabels);
-    Team arr[AR_SIZE];
-    inputFn(arr, AR_SIZE);
+    NFL arr[AR_SIZE];
+    arr->inputFn(arr, AR_SIZE);
     // inset the data into cells
     for(int i = 0; i < ui->tableWidget->rowCount(); i++)
     {
@@ -52,7 +52,7 @@ void MainWindow::TableWidgetDisplay()
             if(j == 1)
                 item->setText(QString::fromStdString(arr[i].getStadiumName()));
             if(j == 2)
-                item->setText(QString::fromStdString(arr[i].getSeatingCapacity()));
+                item->setText(QString::fromStdString(to_string(arr[i].getSeatingCapacity())));
             if(j == 3)
                 item->setText(QString::fromStdString(arr[i].getLocation()));
             if(j == 4)
@@ -64,7 +64,7 @@ void MainWindow::TableWidgetDisplay()
             if(j == 7)
                 item->setText(QString::fromStdString(arr[i].getStadiumRoofType()));
             if(j == 8)
-                item->setText(QString::fromStdString(arr[i].getDateOpened()));
+                item->setText(QString::fromStdString(to_string(arr[i].getDateOpened())));
             item->setFlags(item->flags() ^ Qt::ItemIsEditable);
             ui->tableWidget->setItem(i, j, item);
         }
