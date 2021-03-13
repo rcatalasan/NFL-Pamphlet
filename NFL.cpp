@@ -1,4 +1,7 @@
 #include "NFL.h"
+#include <QVBoxLayout>
+#include <QFile>
+#include <QTextStream>
 
 /// Constructor
 NFL::NFL()
@@ -22,35 +25,44 @@ NFL::~NFL(){}
 
 void NFL::inputFn(NFL arr[], int size)
 {
+    Q_INIT_RESOURCE(textFile);
     // declaring ifstram variable to handle input file
-    ifstream inFile;
-
+    QString line;
     // opening input file
-    inFile.open("C:\\Users\\00joh\\Documents\\Pamphlet\\NFL.txt");
-
-    int index = 0;			// PROC - loop control variable and array traversal
-
+    QFile file(":/new/prefix2/NFL.txt");
+    if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+        return;
+    int index = 0;	// PROC - loop control variable and array traversal
+    QTextStream in(&file);
     // loop that traverses the array
-    while (inFile && index < size)
+    while (!in.atEnd() || index < size)
     {
         // populating the array with user input
-        getline(inFile, arr[index].teamName);
-        getline(inFile, arr[index].stadiumName);
-        //getline(inFile, arr[index].seatingCapacity);
-        inFile >> arr[index].seatingCapacity;
-        inFile.ignore(numeric_limits<streamsize>::max(), '\n');
-        getline(inFile, arr[index].location);
-        getline(inFile, arr[index].conference);
-        getline(inFile, arr[index].division);
-        getline(inFile, arr[index].surfaceType);
-        getline(inFile, arr[index].stadiumRoofType);
-        inFile >> arr[index].dateOpened;
-        inFile.ignore(numeric_limits<streamsize>::max(), '\n');
-
+//        getline(inFile, arr[index].teamName);
+//        getline(inFile, arr[index].stadiumName);
+//        //getline(inFile, arr[index].seatingCapacity);
+//        inFile >> arr[index].seatingCapacity;
+//        inFile.ignore(numeric_limits<streamsize>::max(), '\n');
+//        getline(inFile, arr[index].location);
+//        getline(inFile, arr[index].conference);
+//        getline(inFile, arr[index].division);
+//        getline(inFile, arr[index].surfaceType);
+//        getline(inFile, arr[index].stadiumRoofType);
+//        inFile >> arr[index].dateOpened;
+//        inFile.ignore(numeric_limits<streamsize>::max(), '\n');
+        line = in.readLine(); arr[index].teamName = line.toStdString();
+        line = in.readLine(); arr[index].stadiumName = line.toStdString();
+        line = in.readLine(); std::string line2 = line.toStdString();  arr[index].seatingCapacity = stoi(line2);
+        line = in.readLine(); arr[index].location = line.toStdString();
+        line = in.readLine(); arr[index].conference = line.toStdString();
+        line = in.readLine(); arr[index].division = line.toStdString();
+        line = in.readLine(); arr[index].surfaceType = line.toStdString();
+        line = in.readLine(); arr[index].stadiumRoofType = line.toStdString();
+        line = in.readLine(); line2 = line.toStdString();  arr[index].dateOpened = stoi(line2);
         index++;
     }
     // closes input file
-    inFile.close();
+    file.close();
 }
 
 

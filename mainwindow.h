@@ -21,13 +21,22 @@ public:
 private slots:
     void on_actionContactUs_triggered();
 
+    void on_actionHelp_triggered();
+
     void on_actionLight_Mode_triggered();
 
     void on_actionDark_Mode_triggered();
 
+    void on_radioAll_clicked();
+
+    void on_radioAFC_clicked();
+
+    void on_radioNFL_clicked();
+
 private:
     Ui::MainWindow *ui;
-    void TableWidgetDisplay();
+    void TableWidgetInit();
+    void initConfTables();
 };
 
 

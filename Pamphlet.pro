@@ -9,20 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    NFL.cpp \
     dialog.cpp \
     functions.cpp \
+    helpuser.cpp \
     main.cpp \
-    mainwindow.cpp \
-    team.cpp
+    mainwindow.cpp
 
 HEADERS += \
+    NFL.h \
     dialog.h \
     header.h \
-    mainwindow.h \
-    team.h
+    helpuser.h \
+    mainwindow.h
 
 FORMS += \
     dialog.ui \
+    helpuser.ui \
     mainwindow.ui
 
 # Default rules for deployment.
@@ -34,4 +37,5 @@ DISTFILES += \
     NFL.txt
 
 RESOURCES += \
-    Images.qrc
+    Images.qrc \
+    textFile.qrc

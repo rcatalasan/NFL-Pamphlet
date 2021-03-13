@@ -2,12 +2,15 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>1241</width>
-    <height>670</height>
+    <height>655</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,13 +22,13 @@
   <property name="minimumSize">
    <size>
     <width>1241</width>
-    <height>670</height>
+    <height>655</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>1241</width>
-    <height>670</height>
+    <height>655</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -49,6 +52,9 @@
     <width>16</width>
     <height>16</height>
    </size>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTableWidget" name="tableWidget">
@@ -76,7 +82,7 @@
    <widget class="QLabel" name="NFLPicture">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>360</x>
       <y>-10</y>
       <width>511</width>
       <height>91</height>
@@ -92,8 +98,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>-5</y>
+      <x>330</x>
+      <y>0</y>
       <width>601</width>
       <height>77</height>
      </rect>
@@ -102,66 +108,159 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;img src=&quot;:/new/prefix1/imgs/nflpamphletdark.png&quot;/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_afc">
+   <widget class="QTableWidget" name="tableNFLWidget">
     <property name="geometry">
      <rect>
-      <x>1080</x>
-      <y>589</y>
-      <width>151</width>
-      <height>31</height>
+      <x>10</x>
+      <y>80</y>
+      <width>1221</width>
+      <height>501</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Sunken</enum>
+    </property>
+    <property name="showGrid">
+     <bool>true</bool>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::SolidLine</enum>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tableAFCWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>1221</width>
+      <height>501</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::WinPanel</enum>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="radioAFC">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>590</y>
+      <width>91</width>
+      <height>17</height>
+     </rect>
     </property>
     <property name="text">
      <string>AFC Teams</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_nfl">
+   <widget class="QRadioButton" name="radioNFL">
     <property name="geometry">
      <rect>
-      <x>920</x>
+      <x>1060</x>
       <y>590</y>
-      <width>151</width>
-      <height>31</height>
+      <width>82</width>
+      <height>17</height>
      </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
     </property>
     <property name="text">
      <string>NFL Teams</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_all">
+   <widget class="QRadioButton" name="radioAll">
     <property name="geometry">
      <rect>
-      <x>750</x>
+      <x>1160</x>
       <y>590</y>
-      <width>161</width>
-      <height>31</height>
+      <width>82</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>All Teams</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>860</x>
+      <y>590</y>
+      <width>91</width>
+      <height>16</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>11</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Display all teams</string>
+     <string>Display Options:</string>
+    </property>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>1030</x>
+      <y>590</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="line_2">
+    <property name="geometry">
+     <rect>
+      <x>1140</x>
+      <y>590</y>
+      <width>16</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Vertical</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>590</y>
+      <width>75</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
     </property>
    </widget>
    <zorder>NFLPamphletDark</zorder>
    <zorder>tableWidget</zorder>
    <zorder>NFLPicture</zorder>
-   <zorder>pushButton_afc</zorder>
-   <zorder>pushButton_nfl</zorder>
-   <zorder>pushButton_all</zorder>
+   <zorder>tableNFLWidget</zorder>
+   <zorder>tableAFCWidget</zorder>
+   <zorder>radioAFC</zorder>
+   <zorder>radioNFL</zorder>
+   <zorder>radioAll</zorder>
+   <zorder>label</zorder>
+   <zorder>line</zorder>
+   <zorder>line_2</zorder>
+   <zorder>pushButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
