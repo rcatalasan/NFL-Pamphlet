@@ -7,18 +7,22 @@
     <x>0</x>
     <y>0</y>
     <width>533</width>
-    <height>122</height>
+    <height>111</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Contact Us</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Images.qrc">
+    <normaloff>:/new/prefix1/imgs/footballicon.ico</normaloff>:/new/prefix1/imgs/footballicon.ico</iconset>
+  </property>
   <widget class="QDialogButtonBox" name="buttonBox">
    <property name="geometry">
     <rect>
-     <x>-10</x>
-     <y>90</y>
-     <width>621</width>
+     <x>420</x>
+     <y>80</y>
+     <width>191</width>
      <height>31</height>
     </rect>
    </property>
@@ -32,11 +36,17 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>50</x>
-     <y>20</y>
+     <x>30</x>
+     <y>0</y>
      <width>471</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
     <string>If you wish to leave feedback, report bugs, or ask questions, please e-mail us here:</string>
@@ -45,18 +55,33 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>60</y>
-     <width>231</width>
+     <x>200</x>
+     <y>50</y>
+     <width>171</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>nflpamphlethelp@gmail.com</string>
+    <string>help@nfl-pamphlet.com</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>20</y>
+     <width>401</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
    </property>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="Images.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>buttonBox</sender>
