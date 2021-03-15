@@ -1,7 +1,4 @@
 #include "NFL.h"
-#include <QVBoxLayout>
-#include <QFile>
-#include <QTextStream>
 
 /// Constructor
 NFL::NFL()
@@ -23,13 +20,13 @@ NFL::NFL()
 NFL::~NFL(){}
 
 
-void NFL::inputFn(NFL arr[], int size)
+void NFL::inputFn(QString fileName,NFL arr[], int size)
 {
     Q_INIT_RESOURCE(textFile);
     // declaring ifstram variable to handle input file
     QString line;
     // opening input file
-    QFile file(":/new/prefix2/NFL.txt");
+    QFile file(fileName);
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
         return;
     int index = 0;	// PROC - loop control variable and array traversal
@@ -38,18 +35,6 @@ void NFL::inputFn(NFL arr[], int size)
     while (!in.atEnd() || index < size)
     {
         // populating the array with user input
-//        getline(inFile, arr[index].teamName);
-//        getline(inFile, arr[index].stadiumName);
-//        //getline(inFile, arr[index].seatingCapacity);
-//        inFile >> arr[index].seatingCapacity;
-//        inFile.ignore(numeric_limits<streamsize>::max(), '\n');
-//        getline(inFile, arr[index].location);
-//        getline(inFile, arr[index].conference);
-//        getline(inFile, arr[index].division);
-//        getline(inFile, arr[index].surfaceType);
-//        getline(inFile, arr[index].stadiumRoofType);
-//        inFile >> arr[index].dateOpened;
-//        inFile.ignore(numeric_limits<streamsize>::max(), '\n');
         line = in.readLine(); arr[index].teamName = line.toStdString();
         line = in.readLine(); arr[index].stadiumName = line.toStdString();
         line = in.readLine(); std::string line2 = line.toStdString();  arr[index].seatingCapacity = stoi(line2);
@@ -64,7 +49,6 @@ void NFL::inputFn(NFL arr[], int size)
     // closes input file
     file.close();
 }
-
 
 void NFL::print(NFL arr[], int size) const
 {
@@ -343,29 +327,24 @@ void NFL::printConf(NFL arr[], int size) const
 
 
 
-void NFL::totalCap(NFL arr[], int size) const
+int NFL::totalCap(NFL arr[]) const
 {
-    int tempCap = 0;
+    std::string tempCap = "a";
     int totalCap = 0;
-    string seats;
 
-
-    seatingSort(arr, AR_SIZE);
+    stadiumSort(arr, AR_SIZE);
 
     for (int i = 0; i < AR_SIZE; i++)
     {
 
-        if (arr[i].seatingCapacity != tempCap)
+        if (arr[i].stadiumName != tempCap)
         {
             totalCap += arr[i].seatingCapacity;
         }
 
-        tempCap = arr[i].seatingCapacity;
+        tempCap = arr[i].stadiumName;
     }
-
-    seats = thousandSeparator(totalCap);
-
-    cout << "\n\nTOTAL NFL CAPACITY IS: " << seats << endl << endl;
+    return totalCap;
 }
 
 std::string NFL::getTeamName()

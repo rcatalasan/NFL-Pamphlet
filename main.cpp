@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-#include "team.h"
 #include "header.h"
 #include <QCoreApplication>
 #include <QApplication>

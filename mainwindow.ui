@@ -166,7 +166,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>NFL Teams</string>
+     <string>NFC Teams</string>
     </property>
    </widget>
    <widget class="QRadioButton" name="radioAll">
@@ -207,9 +207,9 @@
    <widget class="Line" name="line">
     <property name="geometry">
      <rect>
-      <x>1030</x>
+      <x>1040</x>
       <y>590</y>
-      <width>31</width>
+      <width>16</width>
       <height>21</height>
      </rect>
     </property>
@@ -236,17 +236,17 @@
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QLabel" name="totalCap">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>590</y>
-      <width>75</width>
-      <height>21</height>
+      <width>281</width>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Total Capacity: </string>
     </property>
    </widget>
    <zorder>NFLPamphletDark</zorder>
@@ -260,7 +260,7 @@
    <zorder>label</zorder>
    <zorder>line</zorder>
    <zorder>line_2</zorder>
-   <zorder>pushButton</zorder>
+   <zorder>totalCap</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -297,8 +297,15 @@
     </widget>
     <addaction name="menuTheme"/>
    </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionMaintenance"/>
+   </widget>
    <addaction name="menuHelp"/>
    <addaction name="menuPreferences"/>
+   <addaction name="menuTools"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionContact">
@@ -333,6 +340,11 @@
    </property>
    <property name="text">
     <string>Dark Mode</string>
+   </property>
+  </action>
+  <action name="actionMaintenance">
+   <property name="text">
+    <string>Maintenance</string>
    </property>
   </action>
  </widget>
