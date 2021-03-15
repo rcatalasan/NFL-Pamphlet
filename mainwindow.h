@@ -3,8 +3,10 @@
 
 #include <QMainWindow>
 #include <QDebug>
+#include "loginform.h"
 #include <fstream>
 #include <cstring>
+#include "NFL.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -17,11 +19,15 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    LoginForm *loginForm = new LoginForm();
+    NFL arr[AR_SIZE];
+    int totalSize;
+
+public slots:
+    void expandTables();
 
 private slots:
     void on_actionContactUs_triggered();
-
-    void on_actionHelp_triggered();
 
     void on_actionLight_Mode_triggered();
 
@@ -33,10 +39,13 @@ private slots:
 
     void on_radioNFL_clicked();
 
+    void on_actionMaintenance_triggered();
+
+    void on_actionHelp_triggered();
+
 private:
     Ui::MainWindow *ui;
     void TableWidgetInit();
-    void initConfTables();
 };
 
 

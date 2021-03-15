@@ -3,6 +3,7 @@
 
 
 #include "header.h"
+
 using namespace std;
 
 /// <summary>
@@ -22,10 +23,7 @@ public:
     /// </summary>
     /// <param name="arr"></param>
     /// <param name="size"></param>
-    void inputFn(NFL arr[], int size);
-
-
-
+    void inputFn(QString fileName, NFL arr[], int size);
 
     /// <summary>
     /// This function receives an array as a parameter and sorts that array using the TEAM NAME member of the NFL objects.
@@ -126,7 +124,7 @@ public:
     /// </summary>
     /// <param name="arr"></param>
     /// <param name="size"></param>
-    void totalCap(NFL arr[], int size) const;
+    int totalCap(NFL arr[]) const;
 
     std::string getTeamName();
     std::string getStadiumName();

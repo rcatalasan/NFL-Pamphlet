@@ -1,19 +1,22 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPushButton>
-#include <QVBoxLayout>
 #include "dialog.h"
-#include "helpuser.h"
 #include "header.h"
+#include "loginform.h"
 #include <QTableWidget>
 #include <QTableWidgetItem>
 #include <QHeaderView>
 #include <QSortFilterProxyModel>
+#include <QDebug>
+#include "helpmenu.h"
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    connect(loginForm, &LoginForm::on_expandTeamsButton_clicked, this, &MainWindow::expandTables);
     ui->setupUi(this);
     TableWidgetInit();
     on_actionLight_Mode_triggered();
@@ -35,9 +38,9 @@ void MainWindow::on_actionContactUs_triggered()
 
 void MainWindow::on_actionHelp_triggered()
 {
-    HelpUser helpuser;
-    helpuser.setModal(true);
-    helpuser.exec();
+    helpMenu dialog;
+    dialog.setModal(true);
+    dialog.exec();
 }
 
 void MainWindow::TableWidgetInit()
@@ -56,8 +59,9 @@ void MainWindow::TableWidgetInit()
     ui->tableWidget->setHorizontalHeaderLabels(hLabels);
     ui->tableNFLWidget->setHorizontalHeaderLabels(hLabels);
     ui->tableAFCWidget->setHorizontalHeaderLabels(hLabels);
-    NFL arr[AR_SIZE];
-    arr->inputFn(arr, AR_SIZE);
+    //NFL arr[AR_SIZE];
+    QString fName = ":/new/prefix2/NFL.txt";
+    arr->inputFn(fName, arr, AR_SIZE);
     // inset the data into cells
     for(int i = 0; i < ui->tableWidget->rowCount(); i++)
     {
@@ -142,6 +146,8 @@ void MainWindow::TableWidgetInit()
     ui->tableNFLWidget->setSortingEnabled(true);
     ui->tableAFCWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableAFCWidget->setSortingEnabled(true);
+    totalSize = arr->totalCap(arr);
+    ui->totalCap->setText("Total seating capacity of NFL: " + QString::fromStdString(to_string(totalSize)));
 }
 
 
@@ -219,7 +225,100 @@ void MainWindow::on_radioAll_clicked()
     ui->tableAFCWidget->setVisible(false);
 }
 
-void MainWindow::initConfTables()
+void MainWindow::on_actionMaintenance_triggered()
 {
+    loginForm->setModal(true);
+    loginForm->exec();
+}
 
+void MainWindow::expandTables()
+{
+    NFL arr2[1];
+    QString fileName = (":/new/prefix2/NFLExpansion.txt");
+    arr2->inputFn(fileName,arr2, 1);
+    int element = 0;
+    int rows = ui->tableWidget->rowCount();
+    ui->tableWidget->setRowCount(rows + 1);
+    QTableWidgetItem *item3;
+    QTableWidgetItem *item4;
+
+    int AFCRows = ui->tableAFCWidget->rowCount();
+    int NFLRows = ui->tableNFLWidget->rowCount();
+    if(arr2[element].getConference()[0] == 'A') ui->tableAFCWidget->setRowCount(AFCRows + 1);
+    else ui->tableNFLWidget->setRowCount(NFLRows + 1);
+    for(int i = 0; i < 9; ++i)
+    {
+        item3 = new QTableWidgetItem;
+        item4 = new QTableWidgetItem;
+        switch(i){
+        case(0):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getTeamName()));
+            item4->setText(QString::fromStdString(arr2[element].getTeamName()));
+            break;
+        }
+        case(1):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getStadiumName()));
+            item4->setText(QString::fromStdString(arr2[element].getStadiumName()));
+            break;
+        }
+        case(2):
+        {
+            item3->setText(QString::fromStdString(to_string(arr2[element].getSeatingCapacity())));
+            item4->setText(QString::fromStdString(to_string(arr2[element].getSeatingCapacity())));
+            break;
+        }
+        case(3):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getLocation()));
+            item4->setText(QString::fromStdString(arr2[element].getLocation()));
+            break;
+        }
+        case(4):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getConference()));
+            item4->setText(QString::fromStdString(arr2[element].getConference()));
+            break;
+        }
+        case(5):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getDivision()));
+            item4->setText(QString::fromStdString(arr2[element].getDivision()));
+            break;
+        }
+        case(6):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getSurfaceType()));
+            item4->setText(QString::fromStdString(arr2[element].getSurfaceType()));
+            break;
+        }
+        case(7):
+        {
+            item3->setText(QString::fromStdString(arr2[element].getStadiumRoofType()));
+            item4->setText(QString::fromStdString(arr2[element].getStadiumRoofType()));
+            break;
+        }
+        case(8):
+        {
+            item3->setText(QString::fromStdString(to_string(arr2[element].getDateOpened())));
+            item4->setText(QString::fromStdString(to_string(arr2[element].getDateOpened())));
+            break;
+        }
+        }
+        item3->setFlags(item3->flags() ^ Qt::ItemIsEditable);
+        ui->tableWidget->setItem(rows, i, item3);
+        if(arr2[element].getConference()[0] == 'A')
+        {
+            item4->setFlags(item4->flags() ^ Qt::ItemIsEditable);
+            ui->tableAFCWidget->setItem(AFCRows, i, item4);
+        }
+        else
+        {
+            item4->setFlags(item4->flags() ^ Qt::ItemIsEditable);
+            ui->tableNFLWidget->setItem(NFLRows, i, item4);
+        }
+    }
+    totalSize += arr2[element].getSeatingCapacity();
+    ui->totalCap->setText("Total seating capacity of NFL: " + QString::fromStdString(to_string(totalSize)));
 }

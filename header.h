@@ -6,6 +6,9 @@
 #include <string>
 #include <iomanip>
 #include <fstream>
+#include <QVBoxLayout>
+#include <QFile>
+#include <QTextStream>
 #include "NFL.h"
 
 //#include <bits/stdc++.h>
