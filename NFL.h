@@ -85,7 +85,6 @@ public:
     void surfaceTypeSort(NFL arr[], int size) const;
 
 
-
     /// <summary>
     /// This function receives an array as a parameter and sorts that array using the STADIUM ROOF TYPE member of the NFL objects.
     /// </summary>
@@ -94,14 +93,12 @@ public:
     void roofTypeSort(NFL arr[], int size) const;
 
 
-
     /// <summary>
     /// This function receives an array as a parameter and sorts that array using the STADIUM DATE OPENED member of the NFL objects.
     /// </summary>
     /// <param name="arr"></param>
     /// <param name="size"></param>
     void dateOpenedSort(NFL arr[], int size) const;
-
 
 
     /// <summary>

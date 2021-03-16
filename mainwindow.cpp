@@ -93,8 +93,8 @@ void MainWindow::TableWidgetInit()
             }
             if(j == 2)
             {
-                item->setText(QString::fromStdString(to_string(arr[i].getSeatingCapacity())));
-                item2->setText(QString::fromStdString(to_string(arr[i].getSeatingCapacity())));
+                item->setText(QString::fromStdString(thousandSeparator(arr[i].getSeatingCapacity())));
+                item2->setText(QString::fromStdString(thousandSeparator(arr[i].getSeatingCapacity())));
             }
             if(j == 3)
             {
@@ -147,7 +147,7 @@ void MainWindow::TableWidgetInit()
     ui->tableAFCWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
     ui->tableAFCWidget->setSortingEnabled(true);
     totalSize = arr->totalCap(arr);
-    ui->totalCap->setText("Total seating capacity of NFL: " + QString::fromStdString(to_string(totalSize)));
+    ui->totalCap->setText("Total seating capacity of NFL: " + QString::fromStdString(thousandSeparator(totalSize)));
 }
 
 
@@ -234,6 +234,10 @@ void MainWindow::on_actionMaintenance_triggered()
 void MainWindow::expandTables()
 {
     NFL arr2[1];
+    ui->tableWidget->setRowCount(0); ui->tableWidget->setColumnCount(0); // must reset table
+    ui->tableAFCWidget->setRowCount(0); ui->tableAFCWidget->setColumnCount(0); // to avoid
+    ui->tableNFLWidget->setRowCount(0); ui->tableNFLWidget->setColumnCount(0); // wrong index!
+    TableWidgetInit();
     QString fileName = (":/new/prefix2/NFLExpansion.txt");
     arr2->inputFn(fileName,arr2, 1);
     int element = 0;
@@ -265,8 +269,8 @@ void MainWindow::expandTables()
         }
         case(2):
         {
-            item3->setText(QString::fromStdString(to_string(arr2[element].getSeatingCapacity())));
-            item4->setText(QString::fromStdString(to_string(arr2[element].getSeatingCapacity())));
+            item3->setText(QString::fromStdString(thousandSeparator(arr[i].getSeatingCapacity())));
+            item4->setText(QString::fromStdString(thousandSeparator(arr[i].getSeatingCapacity())));
             break;
         }
         case(3):
@@ -319,6 +323,7 @@ void MainWindow::expandTables()
             ui->tableNFLWidget->setItem(NFLRows, i, item4);
         }
     }
+    ui->tableNFLWidget->setSortingEnabled(true);
     totalSize += arr2[element].getSeatingCapacity();
-    ui->totalCap->setText("Total seating capacity of NFL: " + QString::fromStdString(to_string(totalSize)));
+    ui->totalCap->setText("Total seating capacity of NFL: " + QString::fromStdString(thousandSeparator(totalSize)));
 }
