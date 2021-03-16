@@ -8,6 +8,9 @@ Dialog::Dialog(QWidget *parent) :
     ui->setupUi(this);
 }
 
+/// <summary>
+/// Destructor
+/// </summary?
 Dialog::~Dialog()
 {
     delete ui;
