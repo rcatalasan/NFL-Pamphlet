@@ -57,7 +57,7 @@ public:
     /// <param name="size"></param>
     void seatingSort(NFL arr[], int size) const;
 
-
+ 
 
     /// <summary>
     /// This function receives an array as a parameter and sorts that array using the CONFERENCE member of the NFL objects.
@@ -117,20 +117,48 @@ public:
 
 
     /// <summary>
-    /// This function receives an array as a parameter and calculates and displays the total NFL seating capacity
+    /// This function receives an array as a parameter and calculates and displays the total NFL seating capacity.
     /// </summary>
     /// <param name="arr"></param>
     /// <param name="size"></param>
     int totalCap(NFL arr[]) const;
 
+    
+    /// <summary>
+    /// This function returns the TEAM NAME of the team as a string.
+    /// </summary>
     std::string getTeamName();
+    /// <summary>
+    /// This function returns the STADIUM NAME of the team as a string.
+    /// </summary>
     std::string getStadiumName();
+    /// <summary>
+    /// This function returns the SEATING CAPACITY of the team as an integer.
+    /// </summary>
     int getSeatingCapacity();
+    /// <summary>
+    /// This function returns the LOCATION of the team as a string.
+    /// </summary>
     std::string getLocation();
+    /// <summary>
+    /// This function returns the CONFERENCE of the team as a string.
+    /// </summary>
     std::string getConference();
+    /// <summary>
+    /// This function returns the DIVISION of the team as a string.
+    /// </summary>
     std::string getDivision();
-    std::string getSurfaceType();
+    /// <summary>
+    /// This function returns the STADIUM SURFACE TYPE of the team as a string.
+    /// </summary>
+    std::string getSurfaceType(); 
+    /// <summary>
+    /// This function returns the STADIUM ROOF TYPE of the team as a string.
+    /// </summary>
     std::string getStadiumRoofType();
+    /// <summary>
+    /// This function returns the DATE OPENED of the team as an integer.
+    /// </summary>
     int getDateOpened();
 
 private:
