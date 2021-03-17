@@ -123,15 +123,15 @@ public:
     /// <param name="size"></param>
     int totalCap(NFL arr[]) const;
 
-    std::string getTeamName();
-    std::string getStadiumName();
-    int getSeatingCapacity();
-    std::string getLocation();
-    std::string getConference();
-    std::string getDivision();
-    std::string getSurfaceType();
-    std::string getStadiumRoofType();
-    int getDateOpened();
+    std::string getTeamName();          /// Returns team name of team as a string.
+    std::string getStadiumName();       /// Returns stadium name of team as a string.
+    int getSeatingCapacity();           /// Returns seating capacity of team as an integer.
+    std::string getLocation();          /// Returns location of team as a string.
+    std::string getConference();        /// Returns conference of team as a string.
+    std::string getDivision();          /// Returns division of team as a string.
+    std::string getSurfaceType();       /// Returns stadium surface type of team as a string. 
+    std::string getStadiumRoofType();   /// Returns stadium roof type of team as a string.
+    int getDateOpened();                /// Returns the date opened of the team as an integer.
 
 private:
 
