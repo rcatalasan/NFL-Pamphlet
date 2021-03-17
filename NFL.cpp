@@ -1,6 +1,8 @@
 #include "NFL.h"
 
+/// <summary>
 /// Constructor
+/// </summary>
 NFL::NFL()
 {
     teamName = " ";
